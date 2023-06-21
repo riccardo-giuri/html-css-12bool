@@ -1,0 +1,112 @@
+@use 'breakpoints' as *;
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+[class*="col-"] {
+    flex: 0 0 auto;
+    border: 1px solid white;
+}
+
+.col {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+    border: 1px solid white;
+}
+
+@for $i from 1 to 13 {
+    .col-#{$i} {
+        flex-basis: calc((100% / 12) * $i);
+        max-width: calc((100% / 12) * $i);
+    }
+}
+
+@for $i from 1 to 13 {
+    .col-offset-#{$i} {
+        margin-left: calc((100% / 12) * $i);
+    }
+}
+
+@include sm {
+    @for $i from 1 to 13 {
+        .col-sm-#{$i} {
+            flex-basis: calc((100% / 12) * $i);
+            max-width: calc((100% / 12) * $i);
+        }
+    }
+    
+    @for $i from 1 to 13 {
+        .col-sm-offset-#{$i} {
+            margin-left: calc((100% / 12) * $i);
+        }
+    }
+}
+
+@include md {
+    @for $i from 1 to 13 {
+        .col-md-#{$i} {
+            flex-basis: calc((100% / 12) * $i);
+            max-width: calc((100% / 12) * $i);
+        }
+    }
+    
+    @for $i from 1 to 13 {
+        .col-md-offset-#{$i} {
+            margin-left: calc((100% / 12) * $i);
+        }
+    }
+}
+
+@include lg {
+    @for $i from 1 to 13 {
+        .col-lg-#{$i} {
+            flex-basis: calc((100% / 12) * $i);
+            max-width: calc((100% / 12) * $i);
+        }
+    }
+    
+    @for $i from 1 to 13 {
+        .col-lg-offset-#{$i} {
+            margin-left: calc((100% / 12) * $i);
+        }
+    }
+}
+
+@include xl {
+    @for $i from 1 to 13 {
+        .col-xl-#{$i} {
+            flex-basis: calc((100% / 12) * $i);
+            max-width: calc((100% / 12) * $i);
+        }
+    }
+    
+    @for $i from 1 to 13 {
+        .col-xl-offset-#{$i} {
+            margin-left: calc((100% / 12) * $i);
+        }
+    }
+}
+
+@include xxl {
+    @for $i from 1 to 13 {
+        .col-xxl-#{$i} {
+            flex-basis: calc((100% / 12) * $i);
+            max-width: calc((100% / 12) * $i);
+        }
+    }
+    
+    @for $i from 1 to 13 {
+        .col-xxl-offset-#{$i} {
+            margin-left: calc((100% / 12) * $i);
+        }
+    }
+}

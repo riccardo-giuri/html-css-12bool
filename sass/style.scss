@@ -1,0 +1,40 @@
+@use 'variables' as *;
+@use 'colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.col, [class*="col-"] {
+    border: 1px solid white;
+    background-color: map-get($color-palette, "blue_std");
+    min-height: 50px;
+}
+
+.col > .row, [class*="col-"] > .row {
+    padding: 1rem;
+}
+
+.col > .row > col,
+[class*="col-"] > .row > [class*="col-"] {
+    padding: 1rem;
+    background-color: map-get($color-palette, "green_std");
+    text-align: center;
+    color: white;
+}
+
+section {
+    margin-bottom: 2rem;
+}
